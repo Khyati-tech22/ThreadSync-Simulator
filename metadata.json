@@ -1,0 +1,5 @@
+{
+  "name": "ThreadSync Simulator",
+  "description": "An interactive educational tool visualizing threading models (Many-to-One, One-to-One, Many-to-Many) and synchronization primitives (Semaphores, Monitors).",
+  "requestFramePermissions": []
+}
