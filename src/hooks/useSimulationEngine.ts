@@ -5,6 +5,17 @@ import { Thread, KernelThread, ThreadingModel, ThreadState, SimulationStats, Sem
 // Helper to convert numeric state back to string
 const STATE_MAP: ThreadState[] = ['NEW', 'READY', 'RUNNING', 'WAITING', 'TERMINATED'];
 
+/**
+ * Custom hook that manages the core threading simulation engine.
+ * 
+ * This engine handles:
+ * - Thread state management (NEW, READY, RUNNING, WAITING, TERMINATED)
+ * - Kernel thread allocation based on the selected threading model
+ * - Inter-thread communication via SharedArrayBuffer
+ * - Real-time synchronization of background Web Workers with the React UI
+ * 
+ * @returns An object containing simulation state and control functions
+ */
 export const useSimulationEngine = () => {
   const [threads, setThreads] = useState<Thread[]>([]);
   const [kernelThreads, setKernelThreads] = useState<KernelThread[]>([]);
