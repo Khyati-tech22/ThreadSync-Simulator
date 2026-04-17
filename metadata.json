@@ -1,5 +1,7 @@
 {
   "name": "ThreadSync Simulator",
-  "description": "An interactive educational tool visualizing threading models (Many-to-One, One-to-One, Many-to-Many) and synchronization primitives (Semaphores, Monitors).",
+  "version": "1.0.0",
+  "author": "Khyati-tech22",
+  "description": "An advanced, real-time Operating System simulator for visualizing Many-to-One, One-to-One, and Many-to-Many threading models. Includes interactive demos for Mutex locks, Semaphores, and Monitors using SharedArrayBuffer technology.",
   "requestFramePermissions": []
 }
