@@ -1,6 +1,17 @@
+/**
+ * Background Thread Worker
+ * 
+ * This worker simulates a CPU-bound process. It uses Atomics on SharedArrayBuffers
+ * to allow the main thread and this worker to communicate states (READY, RUNNING, WAITING)
+ * and progress without the latency of postMessage.
+ * 
+ * Communication Protocol:
+ * - sharedBuffer[0]: Progress (0-1000)
+ * - sharedBuffer[1]: Current state (mapped to STATE_MAP)
+ * - mutexBuffer: Global lock for resource synchronization
+ */
 
-// This is the Real-Time Thread Worker
-// It uses SharedArrayBuffer and Atomics for hardware-level synchronization
+/* eslint-disable no-restricted-globals */
 
 self.onmessage = (e) => {
   const { 
