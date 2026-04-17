@@ -1,20 +1,58 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# ThreadSync Simulator 🧵
 
-# Run and deploy your AI Studio app
+An advanced, interactive educational visualizer for Operating System threading models and synchronization primitives. Built with modern web technologies to provide a high-fidelity simulation of kernel-level processing.
 
-This contains everything you need to run your app locally.
+## ✨ Core Features
 
-View your app in AI Studio: https://ai.studio/apps/3755c435-a091-4d59-aebe-e879b60385a6
+### 1. Threading Models
+- **Many-to-One**: Map multiple user threads to a single kernel thread. Observe systemic blocking.
+- **One-to-One**: Experience true parallelism where every user thread gets its own kernel resource.
+- **Many-to-Many**: The gold standard — dynamic multiplexing of user threads over a pool of kernel threads.
 
-## Run Locally
+### 2. Synchronization Primitives
+- **Mutex Locks**: Toggle race conditions and see how shared buffers get corrupted without atomic locks.
+- **Semaphores**: Visualizing counting semaphores for resource management.
+- **Monitors**: High-level constructs demonstrated through the classic Dining Philosophers problem.
 
-**Prerequisites:**  Node.js
+### 3. Real-time Visualization
+- **CPU Heatmap**: Visual feedback of kernel load and thread execution states.
+- **Interactive Controls**: Adjust simulation speed, CPU quantum, and thread spawning in real-time.
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🚀 Technical Stack
+
+- **Framework**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations**: [Motion](https://motion.dev/)
+- **Logic**: Web Workers for true background execution
+- **UI Components**: shadcn/ui
+
+---
+
+## 🛠️ Run Locally
+
+**Prerequisites:** Node.js (v18+)
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Configure Environment:**
+   Set your `GEMINI_API_KEY` in `.env.local` for AI-assisted insights.
+
+3. **Launch Simulation:**
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 📖 Architecture Overview
+
+The simulator uses a **SharedArrayBuffer** and **Atomics** architecture. This allows the main UI thread to communicate with background Web Workers at high speed without the overhead of postMessage, simulating real OS context switching behaviors.
+
+---
+
+Designed for educational purposes by **Khyati-tech22**.
