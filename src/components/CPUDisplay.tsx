@@ -9,6 +9,13 @@ interface CPUDisplayProps {
   threads: Thread[];
 }
 
+/**
+ * CPUDisplay Component
+ * 
+ * Visualizes the Kernel Level Threads (KLTs) and the User Level Threads (ULTs)
+ * currently mapped to them. It displays active execution bursts via a pulse
+ * animation and shows which specific thread is currently holding the CPU resource.
+ */
 export const CPUDisplay: React.FC<CPUDisplayProps> = ({ kernelThreads, threads }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
